@@ -1,0 +1,6 @@
+@use 'sass:math';
+$cell-size: 80px;
+$player-size: 0.8 * $cell-size;
+$base-shift: math.div($cell-size - $player-size, 2);
+$col-count: 3;
+$row-count: 5;

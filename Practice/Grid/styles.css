@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+}
+
+.catalog {
+  border: 2px dashed black;
+}
+
+/* grid-template-columns: repeat(
+    auto-fill,
+    minmax(200px, 1fr)
+   ); */
+.catalog__content {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+
+  box-sizing: border-box;
+  max-width: 1200px;
+  margin: 0 auto;
+  border: 2px solid black;
+  padding: 20px;
+}
+
+@media (min-width: 480px) {
+  .catalog__content {
+    grid-template-columns: repeat(2, 1fr);
+  } 
+}
+
+@media (min-width: 768px) {
+  .catalog__content {
+    grid-template-columns: repeat(3, 1fr);
+  } 
+}
+@media (min-width: 1024px) {
+  .catalog__content {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 40px;
+  } 
+}
+
+.card {
+  box-sizing: border-box;
+  height: 150px;
+  border: 1px solid blue;
+  background-color: yellowgreen;
+}
+
+ /* Зі змінною на кількість колонок */
+
+/* --columns-count: 1;
+  display: grid;
+  grid-template-columns: repeat(var(--columns-count), 1fr);
+  gap: 20px;
+  
+  box-sizing: border-box;
+  max-width: 1200px;
+  margin: 0 auto;
+  border: 2px solid black;
+  padding: 20px;
+  
+  @media (min-width: 480px) {
+    --columns-count: 2;
+  }
+  
+  @media (min-width: 768px) {
+    --columns-count: 3;
+    padding: 40px;
+  }
+  
+  @media (min-width: 1024px) {
+    --columns-count: 4;
+  }
+} */

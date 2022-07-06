@@ -1,0 +1,28 @@
+
+/* #region header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px;
+  background-color: var(--color-dark);
+}
+
+.page-header--theme_light {
+  background-color: #999;
+}
+
+.page-header--size_s {
+  height: 50px;
+}
+.page-header--size_m {
+  height: 60px;
+}
+.page-header--size_l {
+  height: 70px;
+}
+
+.page-header__logo {
+  display: inline-flex;
+}
+/* #endregion */

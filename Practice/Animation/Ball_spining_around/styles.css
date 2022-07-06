@@ -1,0 +1,34 @@
+.wrapper {
+  margin: 0 auto;
+  width: 100px;
+  border-radius: 50%;
+
+  text-align: center;
+  background-color: #f00;
+
+  transform-origin: 50px 300px;
+  
+  animation-name: rotate;
+  animation-duration: 8s;
+  animation-iteration-count: 2;
+  animation-timing-function: linear;
+}
+
+.ball {
+  height: 100px;
+  
+  animation-name: rotate;
+  animation-duration: 2s;
+  animation-iteration-count: 8;
+  animation-timing-function: linear;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  
+  to {
+    transform: rotate(360deg);
+  }
+}

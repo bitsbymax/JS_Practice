@@ -1,0 +1,23 @@
+
+/* #region section */
+
+.section {
+  border: 1px solid #ced2ed;
+  padding: 24px;
+  border-radius: 16px;
+  background-color: #fff;
+}
+
+.section__title {
+  margin: 0 0 16px;
+}
+
+.what-is-bem__section {
+  margin: 48px 60px;
+}
+
+.benefits__list {
+  margin: 0;
+}
+
+/* #endregion */

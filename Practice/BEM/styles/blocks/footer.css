@@ -1,0 +1,15 @@
+
+/* #region footer */
+
+.footer {
+  padding: 60px;
+  min-height: 150px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-dark);
+  color: #fff;
+}
+
+/* #endregion */

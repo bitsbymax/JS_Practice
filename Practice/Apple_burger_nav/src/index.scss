@@ -1,0 +1,127 @@
+.page {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+
+  &__body {
+    margin: 0;
+  }
+
+  &__header {
+    top: 0;
+  }
+}
+
+
+// Is just a wrapper, can't be used as a block
+.container {
+  box-sizing: border-box;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.promo {
+  background-image: url("https://mate-academy.github.io/fe-program/assets/MA_top.jpg");
+  background-size: cover;
+  background-position: top;
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 300px;
+
+    color: #fff;
+  }
+}
+
+.header {
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+
+.nav {
+  $linkPaddingX: 40px;
+
+  text-align: center;
+
+  &__toggler {
+    border: 0;
+    padding: 10px 5px;
+
+    color: #fff;
+
+    background-color: transparent;
+
+    @media (min-width: 640px) {
+      display: none;
+    }
+  }
+
+  &__toggler::before {
+    content: "=";
+  }
+
+  &--open &__toggler::before {
+    content: "x";
+  }
+  
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0 #{-$linkPaddingX};
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+  
+    max-height: 0;
+    transition: max-height 0.3s;
+
+    @media (min-width: 640px) {
+      max-height: unset;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  
+  &--open &__list {
+    max-height: 100vh;
+  }
+  
+  &__link {
+    display: inline-block;
+    padding: 10px $linkPaddingX;
+
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  &__link:hover {
+    color: #1fc8db;
+  }
+}
+
+.main {
+  padding: 30px 0;
+  background-color: antiquewhite;
+}
+
+.footer {
+  position: sticky;
+  bottom: 0;
+  z-index: -1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 300px;
+
+  color: #fff;
+  background-image: url("https://mate-academy.github.io/fe-program/assets/MA_bottom.jpg");
+  background-size: cover;
+  background-position: top;
+}
