@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const React = {
   createElement(tagName, props, content) {
