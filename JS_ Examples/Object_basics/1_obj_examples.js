@@ -57,7 +57,7 @@ let statusesCount = {
 
 let sumAllCounts = 0;
 for (let [statusName, count] of Object.entries(statusesCount)) {
-  // перебрі, в якому ми перебираємо ключ:значення і одразу відсортовуємо їх в окремі змінні
+  // перебір, в якому ми перебираємо ключ:значення і одразу відсортовуємо їх в окремі змінні
   if (statusName === "Not Migrating") continue;
   sumAllCounts += count;
 }
