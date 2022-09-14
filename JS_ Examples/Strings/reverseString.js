@@ -1,7 +1,7 @@
 //-------------------!!! Three Ways to Reverse a String in JavaScript !!!--------------
 
 function isPalindrome(str) {
-  const lowerTarget = target.toLowerCase();
+  const lowerTarget = str.toLowerCase();
   const abc = 'abcdefghijklmnopqrstuvwxyz';
   let normal = '';
   let reversed = '';
