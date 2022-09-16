@@ -33,7 +33,7 @@ const stylesString = `
   return convertedStyles;
 } */
 
-const convertToObject = (sourceString) => {
+/* const convertToObject = (sourceString) => {
   return sourceString.split(';') //rule: "\n  background-color:      #fff"  string
     .map(rule => rule.split(':')) // 0: "\n  background-color" 1: "      #fff"  array
     .filter(pair => pair.length === 2)  // ['\n  background-color', '      #fff']  array
@@ -45,7 +45,7 @@ const convertToObject = (sourceString) => {
 
       {}
     );
-};
+}; */
 
 const convertToObject = (sourceString) => {
   return new Map(   //! Object.fromEntries

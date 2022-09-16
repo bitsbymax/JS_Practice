@@ -16,9 +16,27 @@ function splitString(str) {    // str = "abc"
   for (let i = 0; i < str1.length; i = i + 2) { // на другій ітерації і = 0+2=2, length = 4
     if (str1.length % 2 !== 0) {  //якщо залишок від ділення довжини масива на 2 не = 0, на першій ітерації length=3, на другій 4, ділиться націло
       str1.push('_');     // додати в кінець підкреслення - str1 = (4) ["a", "b", "c", "_"]
-    } 
+    }
     arr.push(str1[i] + str1[i + 1]);  // str1[0] тобто а + str1[0 + 1] тобто b, на другій ітерації str1[2] тобто с + str1[2 + 1] тобто _
   }
   return arr;
 }
 console.log(splitString('abc'));
+
+//--------------------------------------------------------------
+
+function splitString(str) {
+  let string = str;
+
+  if (string.length % 2 !== 0) {
+    string += '_';
+  }
+
+  const result = [];
+
+  for (let i = 1; i < string.length; i += 2) {
+    result.push(string[i - 1] + string[i]);
+  }
+
+  return result;
+}

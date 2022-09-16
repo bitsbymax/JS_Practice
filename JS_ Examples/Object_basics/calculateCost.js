@@ -33,7 +33,7 @@ price === {
   body: 40,
 } */
 
-debugger
+debugger;
 function calculateCost(bucket, products) {
   const prices = Object.assign({}, ...Object.values(products));
   let amount = 0;
@@ -57,3 +57,28 @@ console.log(calculateCost(bucket = {
     cpu: 150,
   },
 }));
+//---------------------------------------------------------------
+/**
+ * @param {Object} bucket
+ * @param {Object} products
+ *
+ * @returns {number}
+ */
+function calculateCost(bucket, products) {
+  // Each value of a `products` object is an object with prices for some details (like a store)
+  const stores = Object.values(products);
+
+  // Copy prices from all stores to a single object
+  const pricing = Object.assign({}, ...stores);
+  let totalPrice = 0;
+
+  for (const product in bucket) {
+    // Get final product price: price * quantity
+    const productPrice = pricing[product];
+    const productQuantity = bucket[product];
+
+    totalPrice += productPrice * productQuantity;
+  }
+
+  return totalPrice;
+}

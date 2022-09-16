@@ -38,3 +38,19 @@ function isJumping(number) {
   }
 }
 console.log(isJumping(890));
+
+//---------------------------------------------------------------
+
+function isJumping(number) {
+  const str = String(number);
+
+  for (let i = 1; i < str.length; i++) {
+    const difference = str[i] - str[i - 1];
+
+    if (Math.abs(difference) !== 1) {
+      return 'NOT JUMPING';
+    }
+  }
+
+  return 'JUMPING';
+}

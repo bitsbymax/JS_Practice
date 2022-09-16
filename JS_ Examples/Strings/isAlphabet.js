@@ -15,7 +15,7 @@ isAlphabet('mnoprqst') === false - q йде перед r */
 
 
 function isAlphabet(letters) { // повертаємо булеве значення в залежності від того, 
-  let fullAlphabet = 'abcdefghijklmnopqrstuvwxyz';     // чи порядок вказаних символів відповідає
+  const fullAlphabet = 'abcdefghijklmnopqrstuvwxyz';     // чи порядок вказаних символів відповідає
   if (fullAlphabet.includes(letters.toLowerCase()) && letters) {   // алфавіту, && letters - перевірка 
     return true;                                                   // на порожній рядок
   } else {

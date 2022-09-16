@@ -20,3 +20,15 @@ function combineArrays(first, second) {
   }
   return res;
 }
+
+//------------------------------------------------------------
+
+function combineArrays(first, second) {
+  const result = [];
+
+  for (let i = 0; i < first.length; i++) {
+    result[i] = first[i] + second[i];
+  }
+
+  return result;
+}

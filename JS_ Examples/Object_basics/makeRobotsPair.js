@@ -20,13 +20,6 @@ makeRobotsPair(charlie);
 
 console.log(charlie.partner); // null */
 
-/**
- * @param {Object} robot1
- * @param {Object|undefined} robot2
- *
- * @returns {undefined}
- */
-
 function makeRobotsPair(robot1, robot2) {
   if (robot2 === undefined) {
     robot1.partner = null;
@@ -35,3 +28,14 @@ function makeRobotsPair(robot1, robot2) {
     robot2.partner = robot1;
   }
 }
+
+//----------------------------------------
+
+const makeRobotsPair = (robot1, robot2) => {
+  // robot2 can be an object or undefined so we set null instead of undefined
+  robot1.partner = robot2 || null;
+
+  if (robot2) {
+    robot2.partner = robot1;
+  }
+};

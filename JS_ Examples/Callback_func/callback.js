@@ -33,6 +33,12 @@ function calculate(operands, operation) {
   return result;
 }
 
+function calculate(operands, operation) {
+  // call operation with all the given operands
+  return operation(...operands);
+}
+
+
 //!---------------------------------------------------------------------
 
 // const sum = (a, b, c) =>  a + b + c;
@@ -62,6 +68,19 @@ function formatMessage(message, callback) {
   return res.trim();
 }
 
+function formatMessage(message, callback) {
+  const words = message.split(' ');
+  const formattedWords = [];
+
+  for (const word of words) {
+    const formattedWord = callback(word); // call callback for each word
+
+    formattedWords.push(formattedWord);
+  }
+
+  return formattedWords.join(' ');
+}
+
 
 // formatMessage('this is sparta', capitalize);
 // 'This Is Sparta'
@@ -82,7 +101,7 @@ const isRobot = (robot) => {
   }
 
   return false;
-}
+};
 
 function processArray(items, callback) {
   for (const i in items) {
@@ -134,7 +153,7 @@ function filter1(candies, sito) {
 
   for (const candy of candies) {
     if (sito(candy)) {
-      result.push(candy)
+      result.push(candy);
     }
   }
 
@@ -214,7 +233,7 @@ function createCallback(age) { // #f_createCallback
 //!---------------------------------------------------------------------
 const nums = [...'128767653']
   .map(Number);
-  console.log(nums);
+console.log(nums);
 
 function inBetween(start, end) {
   return (n) => n >= start && n <= end;

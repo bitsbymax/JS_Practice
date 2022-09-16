@@ -15,6 +15,15 @@ charlie === marlie // false
 charlie.serial === 100
 marlie.serial === 101 */
 
+function createRobotCopy(robot) {
+  const newRobot = { ...robot };
+
+  newRobot.serial += 1;
+
+  return newRobot;
+}
+
+//---------------------------------
 /**
  * @typedef {Object} Robot
  * @property {number} serial
@@ -25,11 +34,10 @@ marlie.serial === 101 */
  *
  * @returns {Robot}
  */
-
-function createRobotCopy(robot) {
-  const newRobot = { ...robot };
-
-  newRobot.serial += 1;
-
-  return newRobot;
+ function createRobotCopy(robot) {
+  return {
+    ...robot, // copy all props from robot
+    serial: robot.serial + 1, // set correct serial
+  };
 }
+

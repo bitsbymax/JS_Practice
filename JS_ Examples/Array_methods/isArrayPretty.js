@@ -9,6 +9,29 @@
 Напиши функцію isArrayPretty, яка приймає масив чисел numbers та повертає true, якщо він гарний, інакше false. Порожній масив не є гарним. */
 
 function isArrayPretty(numbers) {
+  if (!numbers.length || numbers.length === 1) {
+    return false;
+  }
+
+  let counter = 0;
+
+  for (let i = 0; i < numbers.length; i++) {
+    for (let j = 0; j < numbers.length; j++) {
+      if (numbers[i] === numbers[j] - 1 || numbers[i] === numbers[j] + 1) {
+        counter++;
+      }
+    }
+  }
+
+  if (counter === numbers.length || counter === numbers.length + 1) {
+    return true;
+  }
+
+  return false;
+}
+//---------------------------------------------------------
+
+function isArrayPretty(numbers) {
   if (numbers.length === 0) {
     return false;
   }

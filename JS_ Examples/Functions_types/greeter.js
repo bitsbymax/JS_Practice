@@ -1,9 +1,10 @@
-// ---- Function declaration з викликом ---
+//? ---- Function declaration з викликом ---
 function greeter(name) {
   const result = `Hi, ${name}!`;
   return result;
 }
-const myFunction = greeter();
+const myFunction = greeter('Maks');
+console.log(myFunction); //Hi, Maks!
 
 /// Приклад 2
 printRectangleInfo(5, 8); // виклик функції
@@ -22,13 +23,13 @@ function isEven(x) {
   return x % 2 === 0;
 }
 
-// -------- Function expression ------
+//? -------- Function expression ------
 const isEven2 = function (x) {
   // функціональний вираз, можна викликати лише після оголошення!!!
   return x % 2 === 0;
 };
 
-// ------- Arrow functions, стрілкові функціїї ------
+//? ------- Arrow functions, стрілкові функціїї ------
 const greeter1 = (name) => `Hi, ${name}!`;
 const result1 = greeter1("Maks");
 
@@ -50,9 +51,9 @@ sum.someProp = {
 };
 console.log(sum.someProp);
 
-//? Для того, щоб подивитись на функцію як на об'єкт, викор. console.dir()
+// Для того, щоб подивитись на функцію як на об'єкт, викор. console.dir()
 //!---------------------------------------------------------------------------------------
-// Immediately Invoked Function Expression
+//? Immediately Invoked Function Expression
 const result = (function (a, b) {
   return a * b;
 })(10, 5); //50

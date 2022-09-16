@@ -35,3 +35,17 @@ function isSpecialNumber(n) {
   }
   return "NOT!!";
 }
+
+//--------------------------------------------------
+
+function isSpecialNumber(n) {
+  const check = n.toString();
+
+  for (let i = 0; i < check.length; i++) {
+    if (+check[i] > 5) {
+      return 'NOT!!';
+    }
+  }
+
+  return 'Special!!';
+}

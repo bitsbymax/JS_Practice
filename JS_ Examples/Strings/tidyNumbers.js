@@ -29,3 +29,16 @@ function isTidy(number) {
   }
   return string === result;
 }
+
+//----------------------------------------------------------
+function isTidy(number) {
+  const numToStr = number.toString();
+
+  for (let i = 1; i < numToStr.length; i++) {
+    if (numToStr[i - 1] > numToStr[i]) {
+      return false;
+    }
+  }
+
+  return true;
+}

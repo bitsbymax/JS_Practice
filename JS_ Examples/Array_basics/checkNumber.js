@@ -37,3 +37,25 @@ function checkNumber(number) {
   return res;
 }
 console.log(checkNumber(3));
+
+//-------------------------------------------------------------
+
+function checkNumber(number) {
+  return [
+    isPositive(number),
+    isEven(number),
+    isMultipleTen(number),
+  ];
+}
+
+function isPositive(number) {
+  return number > 0;
+}
+
+function isEven(number) {
+  return number % 2 === 0;
+}
+
+function isMultipleTen(number) {
+  return number % 10 === 0;
+}
