@@ -21,10 +21,45 @@ customer = {
 Вартість заправленого пального округли до сотих (до найближчого значення).
 Підказка: приклади тестів можна знайти під редактором коду. */
 
-function fillTank(customer, fuelPrice, amount) {
-  if (amount < 2 || (fuelPrice * 2 > customer.money) ||
-    (customer.vehicle.maxTankCapacity - customer.vehicle.fuelRemains < 2)) {
+function fillTank(
+  customer,
+  fuelPrice,
+  amount = Infinity, // to pour as much as possible
+) {
+  // We need to know how much fuel we can actually pour
+  const freeSpace = customer.vehicle.maxTankCapacity
+  - customer.vehicle.fuelRemains;
+  const canBuy = customer.money / fuelPrice;
+
+  // not to pour more full than the client wants,
+  // can buy or the tank can accommodate
+  const requiredAmount = Math.min(amount, freeSpace, canBuy);
+  const roundedAmount = roundFuel(requiredAmount);
+
+  // We can't pour less than 2 liters
+  if (roundedAmount < 2) {
     return;
   }
-  
+
+  // We pour the tank and take money
+  customer.vehicle.fuelRemains += roundedAmount;
+  customer.money -= roundPrice(roundedAmount * fuelPrice);
 }
+
+// We created separate rounding function not to complicate the code
+function roundFuel(fuel) {
+  return Math.floor(fuel * 10) / 10;
+}
+
+function roundPrice(price) {
+  return Math.round(price * 100) / 100;
+}
+
+
+fillTank({
+  money: 140,
+  vehicle: {
+    maxTankCapacity: 40,
+    fuelRemains: 14,
+  },
+}, 10, 9.47)

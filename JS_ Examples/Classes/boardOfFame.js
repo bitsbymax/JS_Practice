@@ -49,3 +49,53 @@ class BoardOfFame {
       .join(' | ');
   }
 }
+
+//-----------------------------------------------
+class BoardOfFame {
+  constructor(numberOfPlaces = 3) {
+    this.numberOfPlaces = numberOfPlaces;
+    this.robots = []; // will add robots here
+  }
+
+  addRecord(robotToAdd) {
+    const existingRobot = this.robots.find(
+      robot => robot.name === robotToAdd.name,
+    );
+
+    // if the robotToAdd is already on the board
+    if (existingRobot) {
+      // just update its score
+      existingRobot.score = robotToAdd.score;
+
+      return;
+    }
+
+    // otherwise find a position to put the robotToAdd
+    let position = this.robots.findIndex(
+      robot => robotToAdd.score > robot.score,
+    );
+
+    // if we can't find a robot with a less score
+    if (position === -1) {
+      // we put robotToAdd to the end
+      position = this.robots.length;
+    }
+
+    this.robots.splice(position, 0, robotToAdd);
+  }
+
+  get list() {
+    // Create an array [0, 1, 2 ... numberOfPlaces - 1];
+    return [...Array(this.numberOfPlaces).keys()]
+      // Add info for existing robots and ... for empty spaces
+      .map(i => `${i + 1}. ${getInfo(this.robots[i])}`)
+      .join(' | ');
+  };
+}
+
+function getInfo(robot) {
+  return robot
+    ? `${robot.name}: ${robot.score}`
+    : '...';
+}
+
