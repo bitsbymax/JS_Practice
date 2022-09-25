@@ -25,7 +25,7 @@ export function getDistanceTo(state, point) {
   return Math.abs(x - point.x) + Math.abs(y - point.y);
 }
 
-export const action = {
+export const actions = {
   doACircle(delay) {
     return (dispatch) => {
       return new Promise(resolve => {
