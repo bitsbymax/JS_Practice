@@ -1,6 +1,8 @@
 import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
 import { App } from './App';
 import './app/store';
+import store from './app/store';
 
 // npm i react-redux @types/react-redux
 
@@ -9,5 +11,5 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-  <App />
+  <Provider store={store}><App /></Provider>
 );
