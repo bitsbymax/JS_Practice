@@ -1,15 +1,19 @@
-import { useDispatch } from 'react-redux';
-import { useAppSelector } from '../app/hooks';
-import { actions as positionActions } from '../features/position';
+import { useAppDispatch, useAppSelector } from '../app/hooks';
+import * as positionActions from '../features/position';
 
 export const Position = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const { x, y } = useAppSelector(state => state.position);
 
   const moveLeft = () => dispatch(positionActions.moveLeft());
   const moveRight = () => dispatch(positionActions.moveRight());
   const moveUp = () => dispatch(positionActions.moveUp());
   const moveDown = () => dispatch(positionActions.moveDown());
+
+  const dance = () => {
+    //doACircle(dispatch); як сказано вище, thunk можна просто передати в dispatch
+    dispatch(positionActions.doACircle(500));
+  }
 
   const transformValue = `translate(${x * 100}%, ${y * 100}%)`;
 
@@ -31,7 +35,7 @@ export const Position = () => {
         </div>
 
         <div className="field">
-          <div className="track" style={{ transform: transformValue }}>
+          <div className="track" onClick={dance} style={{ transform: transformValue }}>
             {x + y}
           </div>
         </div>

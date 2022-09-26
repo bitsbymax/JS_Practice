@@ -1,15 +1,16 @@
 // npm i redux @types/redux
-import { combineReducers, legacy_createStore } from 'redux';
+import { configureStore } from '@reduxjs/toolkit';
 import amountReducer from '../features/amount';
 import goodsReducer from '../features/goods';
 import positionReducer from '../features/position';
 
-const reducer = combineReducers({
-  amount: amountReducer,
-  goods: goodsReducer,
-  position: positionReducer
+const store = configureStore({//?замість того, щоб використовувати окремо combineReducers і потім передавати комбіновий reducer в createStore ми просто використовуємо configureStore з redux-toolkit, який під капотом сам викор. combineReducers, додатково підключає devTools extension і крім того автоматично підключає thunk middleware
+  reducer: {
+    amount: amountReducer,
+    goods: goodsReducer,
+    position: positionReducer
+  }
 });
-const store = legacy_createStore(reducer);
 
 export type RootState = ReturnType<typeof store.getState>; //утиліта ReturnType дає можливість вказати хуку useSelector через generic type яким буде тип поточного стану
 //приклад для state.amount
@@ -18,4 +19,5 @@ export type RootState = ReturnType<typeof store.getState>; //утиліта Retu
     amount: number;
   }
 */
+export type AppDispatch = typeof store.dispatch; //тип для кастомного хука useAppDispatch
 export default store;
