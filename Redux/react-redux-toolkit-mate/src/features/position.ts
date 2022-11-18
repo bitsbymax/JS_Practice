@@ -24,7 +24,7 @@ function wait(delay: number) {
 }
 
 export const doACircle = (delay: number) => {//action creator який повертає thunk
-  return async (dispatch: Dispatch) => {//?функція, яка приймає Dispatch і далі виконує якісь дії з redux store, називається Thunk. Additionaly it accepts also getState() method. Thunk functions are not directly called by application code. Instead they are passed to store.dispatch()
+  return async (dispatch: Dispatch) => {//?функція, яка повертає callback, який в свою чергу приймає Dispatch і далі виконує якісь дії з redux store, називається Thunk. Additionaly it accepts also getState() method. Thunk functions are not directly called by application code. Instead they are passed to store.dispatch()
     /* const thunkFunction = (dispatch, getState) => {
         logic here that can dispatch actions or read state
     } 
