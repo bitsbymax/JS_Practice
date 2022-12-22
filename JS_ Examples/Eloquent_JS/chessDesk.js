@@ -28,7 +28,24 @@ function chessDesk(size) {
     }
 
     console.log(fullRow);
-    fullRow = '';
   }
 }
 chessDesk(8);
+
+function printBoard(size) {
+  let board = '';
+  for (let i = 0; i < size; i++) {
+    for (let j = 0; j < size; j++) {
+      if (Math.abs(i - j) % 2 === 0) {
+        board += ' ';
+      } else {
+        board += '#';
+      }
+    }
+    board += '\n';
+  }
+
+  console.log(board);
+}
+
+printBoard(6);
