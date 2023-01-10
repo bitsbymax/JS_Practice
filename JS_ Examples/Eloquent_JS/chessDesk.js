@@ -10,7 +10,7 @@ for (let index = 0; index < 7; index++) {
   if (index % 3 == 0 && index % 5 == 0) console.log('FizzBuzz', index)
 } */
 
-function chessDesk(size) {
+/* function chessDesk(size) {
   let space = " ";
   let hash = "#";
   let fullRow = '';
@@ -30,7 +30,7 @@ function chessDesk(size) {
     console.log(fullRow);
   }
 }
-chessDesk(8);
+chessDesk(8); */
 
 function printBoard(size) {
   let board = '';
@@ -48,4 +48,4 @@ function printBoard(size) {
   console.log(board);
 }
 
-printBoard(6);
+printBoard(8);
