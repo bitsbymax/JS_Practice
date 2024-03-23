@@ -4,9 +4,9 @@ const listExample = {
     value: 2,
     rest: {
       value: 3,
-      rest: null
-    }
-  }
+      rest: null,
+    },
+  },
 };
 
 function createLinkedList(arr) {
@@ -16,7 +16,7 @@ function createLinkedList(arr) {
   for (let i = arr.length - 1; i >= 0; i--) {
     current = {
       value: arr[i],
-      rest: previous
+      rest: previous,
     };
     previous = current;
   }
@@ -24,7 +24,7 @@ function createLinkedList(arr) {
   return current;
 }
 
-console.log(createLinkedList([1, 2, 3]));
+// console.log(createLinkedList([1, 2, 3]));
 
 function linkedListToArray(list) {
   const array = [];
@@ -37,3 +37,27 @@ function linkedListToArray(list) {
 
   return array;
 }
+
+function prepend(element, list) {
+  return {
+    value: element,
+    rest: list,
+  };
+}
+
+function nth(list, number) {
+  if (number == 0) return list.value;
+  let counter = 0;
+  let current = null;
+
+  while (list.rest !== null) {
+    if (counter == number) {
+      return list.value;
+    }
+
+    current = list.rest;
+    counter++;
+  }
+}
+
+console.log(nth(listExample, 3));
