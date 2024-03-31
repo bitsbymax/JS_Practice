@@ -51,7 +51,7 @@ function nth(list, number) {
   let current = null;
 
   while (list.rest !== null) {
-    if (counter == number) {
+    if (number == counter) {
       return list.value;
     }
 
