@@ -1,0 +1,55 @@
+.center-1 {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+  text-align: center;
+}
+
+.wrapper {
+  position: relative;
+  margin-top: 40px;
+
+  .center-2 {
+    position: absolute;
+    top: 50%;
+    /* Vertically center */
+    left: 50%;
+    /* Horizontally center */
+    transform: translate(-50%, -50%);
+    /* Adjust for half of element's size */
+    /* Other styles (e.g., background, dimensions, etc.) */
+    border: 3px solid rgb(39, 77, 192);
+    padding: 20px;
+  }
+}
+
+.center-3 {
+  display: flex;
+  align-items: center;
+  /* Vertical centering */
+  justify-content: center;
+  /* Horizontal centering */
+  margin-top: 30px;
+  border: 3px solid rgb(39, 77, 192);
+  padding: 10px;
+
+  div {
+    border: 3px solid green;
+    padding: 10px;
+  }
+}
+
+
+.container {
+  display: grid;
+  place-items: center;
+  height: 8em;
+  margin-top: 10px;
+
+  .item {
+    border: solid 3px;
+    padding: 1em;
+    max-width: 75%;
+  }
+}
