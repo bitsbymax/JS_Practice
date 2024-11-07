@@ -1,0 +1,60 @@
+* {
+  font-family: 'Cubano';
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: rgba(87, 12, 137, 0.828);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1em;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+li {
+  margin: 0 1em;
+}
+
+a {
+  font-family: "Cubano";
+  color: #3dd4bb;
+  text-decoration: none;
+  font-size: 1.7em;
+}
+
+a:hover {
+  color: #ffd700;
+}
+
+#content {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  & h1,
+  h2 {
+    color: #ffd700;
+    font-size: 2.6em;
+  }
+
+  & p {
+    color: rgba(250, 70, 88, 0.916);
+    font-size: 1.6em;
+  }
+}
